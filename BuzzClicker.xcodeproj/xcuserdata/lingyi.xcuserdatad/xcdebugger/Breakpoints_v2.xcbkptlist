@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BuzzClicker/RestApiManager.swift"
+            timestampString = "480214625.025901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "makeHTTPGetRequest(_:onCompletion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BuzzClicker/CheckInViewController.swift"
+            timestampString = "480230619.208302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "CheckInViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BuzzClicker.CheckInViewController.__deallocating_deinit"
+                  moduleName = "BuzzClicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lingyi/Documents/iOSDevelop/BuzzClicker/BuzzClicker/CheckInViewController.swift"
+                  timestampString = "480229480.824989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BuzzClicker.CheckInViewController.init (BuzzClicker.CheckInViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; BuzzClicker.CheckInViewController"
+                  moduleName = "BuzzClicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lingyi/Documents/iOSDevelop/BuzzClicker/BuzzClicker/CheckInViewController.swift"
+                  timestampString = "480229480.825335"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BuzzClicker.CheckInViewController.init (BuzzClicker.CheckInViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BuzzClicker.CheckInViewController&gt;"
+                  moduleName = "BuzzClicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lingyi/Documents/iOSDevelop/BuzzClicker/BuzzClicker/CheckInViewController.swift"
+                  timestampString = "480229480.825555"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
