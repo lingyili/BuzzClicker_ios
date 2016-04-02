@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 
+protocol UserClassListDelegate {
+    func userClassList(list:Array<String>)
+}
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtPassword: UITextField!
@@ -16,12 +19,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     
     var jsonArray:NSMutableArray?
-    var newArray: Array<AnyObject> = []
+    var newArray: Array<String> = []
+    var delegate: UserClassListDelegate? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        self.delegate?.userClassList(newArray)
+        
         // Do any additional setup after loading the view.
     }
     //Calls this function when the tap is recognized.
@@ -35,9 +41,14 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var DestViewController: ClassViewController = segue.destinationViewController as! ClassViewController
-////        DestViewController.ClassList = ["CS1122", "CS3322hgjfkghjfk"]
-////        print(DestViewController.ClassList)
+//        if (segue.identifier == "mySegue") {
+//            var DestViewController: ClassListViewController = segue.destinationViewController as! ClassListViewController
+//            DestViewController.ClassList = ["CS1122", "CS3322"]
+//        }
+//        
+//        //string field = myField.Text;
+////        var DestViewController: UITabBarController = segue.destinationViewController as! UITabBarController
+//       
 //    }
 
     @IBAction func btn_login(sender: UIButton) {
@@ -58,11 +69,20 @@ class LoginViewController: UIViewController {
                     //print("JSON: \(JSON)")
                     self.jsonArray = JSON as? NSMutableArray
                     for item in self.jsonArray! {
-                        print(item)
-                        self.newArray.append(item)
+                        self.newArray.append(String(item))
                     }
-                    print(self.newArray)
+                    
+                    
+//                    if (self.delegate != nil) {
+//                        print(self.newArray)
+//                        let information:Array<String> = self.newArray
+//                        self.delegate!.userClassList(information)
+//                    } else {
+//                        self.delegate!.userClassList(self.newArray)
+//                    }
+                    
                     if (self.newArray.count > 0) {
+
                         let myTabBar = self.storyboard?.instantiateViewControllerWithIdentifier("tabView") as! UITabBarController
                         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                         appDelegate.window?.rootViewController = myTabBar
