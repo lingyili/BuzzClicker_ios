@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtUsername: UITextField!
     
+    let userDefault = NSUserDefaults.standardUserDefaults()
     var jsonArray:NSMutableArray?
     var newArray: Array<String> = []
     var delegate: UserClassListDelegate? = nil
@@ -27,6 +28,7 @@ class LoginViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         self.delegate?.userClassList(newArray)
+        self.txtUsername.frame.size.height = 500
         
         // Do any additional setup after loading the view.
     }
@@ -67,7 +69,7 @@ class LoginViewController: UIViewController {
                 print(response.result)   // result of response serialization
 
                 if let JSON = response.result.value {
-                    //print("JSON: \(JSON)")
+                    print("JSON: \(JSON)")
                     self.jsonArray = JSON as? NSMutableArray
                     for item in self.jsonArray! {
                         self.newArray.append(String(item))
@@ -83,10 +85,15 @@ class LoginViewController: UIViewController {
 //                    }
                     
                     if (self.newArray.count > 0) {
-
+                        self.userDefault.setObject(self.newArray, forKey: "myClassList")
+                        self.userDefault.synchronize()
                         let myTabBar = self.storyboard?.instantiateViewControllerWithIdentifier("tabView") as! UITabBarController
                         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                         appDelegate.window?.rootViewController = myTabBar
+                    } else {
+                        let alertController = UIAlertController(title: "Failure", message:
+                            "Sorry, please check your username and password!", preferredStyle: UIAlertControllerStyle.Alert)
+                        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
                     }
 
                 }

@@ -37,14 +37,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="T9d-Lg-ihv">
+                                <rect key="frame" x="0.0" y="31" width="375" height="668"/>
+                                <gestureRecognizers/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjd-gE-mEC">
                                 <rect key="frame" x="38" y="251" width="289" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="d77-bd-lk0">
-                                <rect key="frame" x="0.0" y="21" width="375" height="668"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRT-eX-f9P">
                                 <rect key="frame" x="43" y="418" width="289" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.7674324481" blue="0.20672715150000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWT-8p-DCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2028.5" y="297.5"/>
+            <point key="canvasLocation" x="-2028.5" y="286.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jOy-p8-9t1">
@@ -262,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Y9K-Xx-7se">
-                                <rect key="frame" x="0.0" y="-50" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="-38" width="375" height="656"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4c-gj-FEO">
                                 <rect key="frame" x="0.0" y="569" width="375" height="56"/>
@@ -272,7 +273,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bws-vY-lDi" kind="show" id="XQ0-Fg-RId"/>
+                                    <segue destination="Bws-vY-lDi" kind="show" identifier="showClicker" id="XQ0-Fg-RId"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-c6-CBq">
@@ -465,7 +466,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTL-4y-hTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="LD8-sb-FN4"/>
             </objects>
-            <point key="canvasLocation" x="-2093.5" y="3477.5"/>
+            <point key="canvasLocation" x="-2028.5" y="3477.5"/>
         </scene>
         <!--Class-->
         <scene sceneID="vur-dI-VMJ">

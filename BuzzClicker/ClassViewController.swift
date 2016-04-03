@@ -23,9 +23,10 @@ class ClassViewController: UIViewController, UICollectionViewDataSource, UIColle
     let attendanceArray = [0,1,1,1,0,0]
     
     var currentClass = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(currentClass)
         
         // Do any additional setup after loading the view.
     }
@@ -53,6 +54,15 @@ class ClassViewController: UIViewController, UICollectionViewDataSource, UIColle
         return cell
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showClicker") {
+            let vc = segue.destinationViewController as! ClickerViewController
+            vc.currentClass = self.currentClass
+            
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -16,10 +16,11 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     
   
     
-    var ClassList: Array<String> = ["CS101", "CS100", "CS123"]
+    //var ClassList: Array<String> = ["CS101", "CS100", "CS123"]
+    let ClassList = NSUserDefaults.standardUserDefaults().objectForKey("myClassList") as? Array<String>
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.ClassList)
+        
         myView.dataSource = self
         myView.delegate = self
         // Do any additional setup after loading the view.
@@ -37,7 +38,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ClassList.count;
+        return ClassList!.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -49,7 +50,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.backgroundView = blurView
         cell.layer.cornerRadius = 10
         
-        cell.className?.text = ClassList[indexPath.row]
+        cell.className?.text = ClassList![indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
@@ -64,7 +65,7 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
             let indexPath = indexPaths as NSIndexPath
             let vc = segue.destinationViewController as! ClassViewController
             
-            vc.currentClass = self.ClassList[indexPath.row]
+            vc.currentClass = self.ClassList![indexPath.row]
             
             
         }
