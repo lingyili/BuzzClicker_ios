@@ -9,64 +9,70 @@
 import UIKit
 import Alamofire
 
-class ClassListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UserClassListDelegate {
+class ClassListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var myView: UITableView!
     
-     var ClassList: Array<String> = ["CS101", "CS100", "CS123"]
+    
+  
+    
+    var ClassList: Array<String> = ["CS101", "CS100", "CS123"]
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self.ClassList)
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+        myView.dataSource = self
+        myView.delegate = self
         // Do any additional setup after loading the view.
         
     }
-   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.backgroundColor = .clearColor()
-    }
     override func viewWillAppear(animated: Bool) {
-        //self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-        super.viewWillAppear(animated)
-        
-        // Add a background view to the table view
-        let backgroundImage = UIImage(named: "Background.png")
-        let imageView = UIImageView(image: backgroundImage)
-        self.tableView.backgroundView = imageView
-        
-        // no lines where there aren't cells
-        tableView.tableFooterView = UIView(frame: CGRectZero)
-        
-        // center and scale background image
-        imageView.contentMode = .ScaleAspectFill
-        
-        // Set the background color to match better
-        //tableView.backgroundColor = .lightGrayColor()
-        
-//        // blur it
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = imageView.bounds
-//        imageView.addSubview(blurView)
+         super.viewWillAppear(animated)
+         myView.tableFooterView = UIView(frame: CGRectZero)
+         myView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
-
-
-    func userClassList(list: Array<String>) {
-        ClassList = list
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ClassList.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
-        cell.textLabel?.text = ClassList[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! customCell
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundView = blurView
+        cell.layer.cornerRadius = 10
+        
+        cell.className?.text = ClassList[indexPath.row]
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showClass", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier=="showClass") {
+            let indexPaths = self.myView.indexPathForSelectedRow!
+            let indexPath = indexPaths as NSIndexPath
+            let vc = segue.destinationViewController as! ClassViewController
+            
+            vc.currentClass = self.ClassList[indexPath.row]
+            
+            
+        }
+    }
+    
+    
+    @IBAction func logout_tapped(sender: AnyObject) {
+        
     }
     
 

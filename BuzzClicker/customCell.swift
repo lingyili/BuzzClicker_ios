@@ -12,6 +12,7 @@ class customCell: UITableViewCell {
 
    
     @IBOutlet var className: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

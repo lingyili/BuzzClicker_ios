@@ -14,8 +14,10 @@
 		AC344CD71CAC73EA00602B47 /* ClickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC344CD61CAC73EA00602B47 /* ClickerViewController.swift */; };
 		AC6C2A8E1CA86D6C001C823A /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C2A8D1CA86D6C001C823A /* CheckViewController.swift */; };
 		AC6C2A901CA87666001C823A /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C2A8F1CA87666001C823A /* ClassListViewController.swift */; };
-		AC6C2A921CA87C84001C823A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6C2A911CA87C84001C823A /* Main.storyboard */; };
 		ACA3B4191CAD8BC500507822 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3B4181CAD8BC500507822 /* SwiftyJSON.swift */; };
+		ACAC4A361CB07FE900E9BE50 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC4A351CB07FE900E9BE50 /* ClassViewController.swift */; };
+		ACAC4A381CB080B100E9BE50 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC4A371CB080B100E9BE50 /* CollectionViewCell.swift */; };
+		ACAC4A3A1CB0BA0B00E9BE50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC4A391CB0BA0B00E9BE50 /* Main.storyboard */; };
 		ACF303FB1C9CA32300FBB3A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF303FA1C9CA32300FBB3A4 /* AppDelegate.swift */; };
 		ACF303FD1C9CA32300FBB3A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF303FC1C9CA32300FBB3A4 /* ViewController.swift */; };
 		ACF304021C9CA32300FBB3A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF304011C9CA32300FBB3A4 /* Assets.xcassets */; };
@@ -49,8 +51,10 @@
 		AC344CD61CAC73EA00602B47 /* ClickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickerViewController.swift; sourceTree = "<group>"; };
 		AC6C2A8D1CA86D6C001C823A /* CheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		AC6C2A8F1CA87666001C823A /* ClassListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
-		AC6C2A911CA87C84001C823A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ACA3B4181CAD8BC500507822 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		ACAC4A351CB07FE900E9BE50 /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
+		ACAC4A371CB080B100E9BE50 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		ACAC4A391CB0BA0B00E9BE50 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ACF303F71C9CA32300FBB3A4 /* BuzzClicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuzzClicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF303FA1C9CA32300FBB3A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF303FC1C9CA32300FBB3A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,16 +142,18 @@
 				ACA3B4181CAD8BC500507822 /* SwiftyJSON.swift */,
 				ACF303FA1C9CA32300FBB3A4 /* AppDelegate.swift */,
 				ACF303FC1C9CA32300FBB3A4 /* ViewController.swift */,
+				ACAC4A391CB0BA0B00E9BE50 /* Main.storyboard */,
 				ACF304011C9CA32300FBB3A4 /* Assets.xcassets */,
 				ACF304031C9CA32300FBB3A4 /* LaunchScreen.storyboard */,
 				ACF304061C9CA32300FBB3A4 /* Info.plist */,
-				AC6C2A911CA87C84001C823A /* Main.storyboard */,
 				AC08002E1C9E818F00416851 /* LoginViewController.swift */,
 				AC0E85E01C9FACE70055FFB3 /* CheckInViewController.swift */,
 				AC0E85E21C9FC3980055FFB3 /* customCell.swift */,
 				AC6C2A8D1CA86D6C001C823A /* CheckViewController.swift */,
 				AC6C2A8F1CA87666001C823A /* ClassListViewController.swift */,
 				AC344CD61CAC73EA00602B47 /* ClickerViewController.swift */,
+				ACAC4A351CB07FE900E9BE50 /* ClassViewController.swift */,
+				ACAC4A371CB080B100E9BE50 /* CollectionViewCell.swift */,
 			);
 			path = BuzzClicker;
 			sourceTree = "<group>";
@@ -277,7 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC6C2A921CA87C84001C823A /* Main.storyboard in Resources */,
+				ACAC4A3A1CB0BA0B00E9BE50 /* Main.storyboard in Resources */,
 				ACF304051C9CA32300FBB3A4 /* LaunchScreen.storyboard in Resources */,
 				ACF304021C9CA32300FBB3A4 /* Assets.xcassets in Resources */,
 			);
@@ -361,6 +367,8 @@
 				ACA3B4191CAD8BC500507822 /* SwiftyJSON.swift in Sources */,
 				AC6C2A8E1CA86D6C001C823A /* CheckViewController.swift in Sources */,
 				AC0E85E11C9FACE70055FFB3 /* CheckInViewController.swift in Sources */,
+				ACAC4A361CB07FE900E9BE50 /* ClassViewController.swift in Sources */,
+				ACAC4A381CB080B100E9BE50 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

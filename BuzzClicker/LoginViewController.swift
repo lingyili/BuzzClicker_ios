@@ -57,6 +57,7 @@ class LoginViewController: UIViewController {
         let pass = txtPassword.text
         
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/mlogin"
+//        let urlString = "http://143.215.92.32:8081/mlogin"
         //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         Alamofire.request(.POST, urlString, parameters: ["username": user!, "password":pass!])
             .responseJSON { response in
