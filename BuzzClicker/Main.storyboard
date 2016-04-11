@@ -41,11 +41,6 @@
                                 <rect key="frame" x="0.0" y="31" width="375" height="668"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjd-gE-mEC">
-                                <rect key="frame" x="38" y="251" width="289" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRT-eX-f9P">
                                 <rect key="frame" x="43" y="418" width="289" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.7674324481" blue="0.20672715150000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uJ-r8-C5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2028.5" y="2698.5"/>
+            <point key="canvasLocation" x="-924.5" y="279.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qHt-l8-g7l">
@@ -95,12 +90,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqT-KG-iUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2028.5" y="1041.5"/>
+            <point key="canvasLocation" x="-924.5" y="-1377.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="f8y-uC-XdM">
             <objects>
-                <viewController id="KyZ-7X-yWw" customClass="LoginViewController" customModule="BuzzClicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="KyZ-7X-yWw" customClass="LoginViewController" customModule="BuzzClicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c7b-yl-08F"/>
                         <viewControllerLayoutGuide type="bottom" id="kG2-gF-PqW"/>
@@ -119,12 +114,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5PQ-tt-xA8" userLabel="password">
-                                <rect key="frame" x="61" y="369" width="272" height="40"/>
+                                <rect key="frame" x="61" y="369" width="272" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GTID" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-tz-afC" userLabel="username">
-                                <rect key="frame" x="61" y="276" width="272" height="40"/>
+                                <rect key="frame" x="61" y="276" width="272" height="30"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -232,12 +227,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Class" id="fhb-NH-gB0">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jrR-wv-sR7">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="zaO-3f-rk5">
                             <connections>
-                                <action selector="logout_tapped:" destination="bs3-uj-Ljz" id="HLI-ni-YaS"/>
+                                <action selector="logout_tapped:" destination="bs3-uj-Ljz" id="bZg-Pr-Iom"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="user" id="zaO-3f-rk5"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -248,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xh1-ke-uli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2543.5" y="2703.5"/>
+            <point key="canvasLocation" x="-1439.5" y="284.5"/>
         </scene>
         <!--ClassDetail-->
         <scene sceneID="y78-4n-tiF">
@@ -353,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZc-kS-aSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2543.5" y="3477.5"/>
+            <point key="canvasLocation" x="-1439.5" y="1058.5"/>
         </scene>
         <!--Clicker View Controller-->
         <scene sceneID="ISB-Rr-bk0">
@@ -430,11 +424,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OxC-uq-eMu">
-                                <rect key="frame" x="106" y="175" width="152" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGH-lc-lOu">
                                 <rect key="frame" x="20" y="244" width="83" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.78952819108963013" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -467,7 +456,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTL-4y-hTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="LD8-sb-FN4"/>
             </objects>
-            <point key="canvasLocation" x="-2028.5" y="3477.5"/>
+            <point key="canvasLocation" x="-924.5" y="1058.5"/>
         </scene>
         <!--Class-->
         <scene sceneID="vur-dI-VMJ">
@@ -486,7 +475,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiO-7i-Rcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2543.5" y="1930.5"/>
+            <point key="canvasLocation" x="-1439.5" y="-488.5"/>
         </scene>
         <!--Check In-->
         <scene sceneID="Lo9-yK-Mwb">
@@ -505,7 +494,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7x-ls-Wnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2028.5" y="1925.5"/>
+            <point key="canvasLocation" x="-924.5" y="-493.5"/>
         </scene>
     </scenes>
     <resources>

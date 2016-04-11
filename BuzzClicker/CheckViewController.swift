@@ -37,9 +37,9 @@ class CheckViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func check_tapped(sender: UIButton) {
         if (self.find == 2) {
-            self.myLabel.text = "You have successfully checked in "
-        } else if (self.find == 1) {
             self.myLabel.text = "You have already checked in "
+        } else if (self.find == 1) {
+            self.myLabel.text = "You have successfully checked in "
         } else if (self.find == 0) {
             self.myLabel.text = "Class Not Found! Search Again"
             sender.setTitle("Search Again", forState: UIControlState.Normal)

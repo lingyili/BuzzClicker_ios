@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
 
     @IBOutlet weak var txtUsername: UITextField!
-    
+    var username = ""
     let userDefault = NSUserDefaults.standardUserDefaults()
     var jsonArray:NSMutableArray?
     var newArray: Array<String> = []
@@ -57,11 +57,11 @@ class LoginViewController: UIViewController {
         //authentication code
         let user = txtUsername.text
         let pass = txtPassword.text
-        
+        let username = ("student:" + user!)
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/mlogin"
 //        let urlString = "http://143.215.92.32:8081/mlogin"
         //urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-            Alamofire.request(.POST, urlString, parameters: ["username": user!, "password":pass!])
+            Alamofire.request(.POST, urlString, parameters: ["username": username, "password":pass!])
                 .responseJSON { response in
                     print(response.request)  // original URL request
                     print(response.response) // URL response
@@ -87,6 +87,7 @@ class LoginViewController: UIViewController {
                             
                             if (self.newArray.count > 0) {
                                 self.userDefault.setObject(self.newArray, forKey: "myClassList")
+                                self.userDefault.setObject(user!, forKey: "myUsername")
                                 self.userDefault.synchronize()
                                 let myTabBar = self.storyboard?.instantiateViewControllerWithIdentifier("tabView") as! UITabBarController
                                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

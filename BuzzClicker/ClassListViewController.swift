@@ -66,13 +66,22 @@ class ClassListViewController: UIViewController, UITableViewDelegate, UITableVie
             let vc = segue.destinationViewController as! ClassViewController
             
             vc.currentClass = self.ClassList![indexPath.row]
-            
-            
         }
     }
-    
-    
+
     @IBAction func logout_tapped(sender: AnyObject) {
+        let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/mlogout"
+        Alamofire.request(.GET, urlString).responseJSON {
+            response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+        }
+        let myView = (self.storyboard?.instantiateViewControllerWithIdentifier("login"))! as UIViewController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window?.rootViewController = myView
+
         
     }
     

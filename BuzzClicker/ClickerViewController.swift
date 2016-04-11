@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 class ClickerViewController: UIViewController {
-
+    let username = NSUserDefaults.standardUserDefaults().objectForKey("myUsername") as? String
 //    let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/CS102/msubmit"
     
     var currentClass = ""
@@ -18,6 +18,7 @@ class ClickerViewController: UIViewController {
         print(currentClass)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        print(username)
         // Do any additional setup after loading the view.
     }
     func dismissKeyboard() {
@@ -30,9 +31,10 @@ class ClickerViewController: UIViewController {
     }
     
     @IBAction func A_tapped(sender: AnyObject) {
-        let answer = "a"
+        
+        let answer = "A"
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -78,8 +80,8 @@ class ClickerViewController: UIViewController {
     
     @IBAction func B_tapped(sender: AnyObject) {
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        let answer = "b"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        let answer = "B"
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -118,8 +120,8 @@ class ClickerViewController: UIViewController {
     
     @IBAction func C_tapped(sender: AnyObject) {
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        let answer = "c"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        let answer = "C"
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -159,8 +161,8 @@ class ClickerViewController: UIViewController {
     
     @IBAction func D_tapped(sender: AnyObject) {
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        let answer = "d"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        let answer = "D"
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -199,8 +201,8 @@ class ClickerViewController: UIViewController {
     
     @IBAction func E_tapped(sender: AnyObject) {
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        let answer = "e"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        let answer = "E"
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
@@ -240,8 +242,8 @@ class ClickerViewController: UIViewController {
     
     @IBAction func F_tapped(sender: AnyObject) {
         let urlString = "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/" + currentClass + "/msubmit"
-        let answer = "f"
-        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":"student:a", "answer":answer])
+        let answer = "F"
+        Alamofire.request(.POST, urlString, parameters: ["question": "1", "username":username!, "answer":answer])
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
