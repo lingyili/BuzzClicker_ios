@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class ClassViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet var cellView: CollectionViewCell!
@@ -27,7 +27,18 @@ class ClassViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         print(currentClass)
-        
+        let urlString =  "http://buzzclicker.chjqiqmmih.us-west-2.elasticbeanstalk.com/checkHistory"
+        Alamofire.request(.POST, urlString).responseJSON {
+            response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+            
+        }
         // Do any additional setup after loading the view.
     }
 
